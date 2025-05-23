@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<main>
+    <h1>Доступні квізи</h1>
+    <p>Оберіть один із квізів, щоб пройти його:</p>
+
+    <ul>
+        {% for quiz in quizzes %}
+        <li>
+            <h2>{{ quiz.quizz_name }}</h2>
+            <p>{{ quiz.description }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</main>
+{% endblock main %}
