@@ -1,18 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>QuizApp</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-<h1> Header </h1>
 
-{% block main%}
+<header class="site-header">
+    <div class="container">
+        <h1 class="logo"><a href="{{ url_for('index') }}">QuizApp</a></h1>
+        <nav class="main-nav">
+            <a href="{{ url_for('index') }}">Головна</a>
+            <a href="{{ url_for('quizzes') }}">Квізи</a>
+        </nav>
+    </div>
+</header>
 
-{% endblock main%}
+<main class="main-content">
+    {% block main %}
+    {% endblock main %}
+</main>
 
-<h1>Footer </h1>
+<footer class="site-footer">
+    <div class="container">
+        <p>&copy; {{ current_year }} QuizApp. Усі права захищено.</p>
+    </div>
+</footer>
 
 </body>
 </html>
