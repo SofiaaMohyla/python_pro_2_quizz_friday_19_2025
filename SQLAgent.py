@@ -94,3 +94,19 @@ class SQLAgent:
         quizzes = cursor.fetchall()
         cursor.close()
         return quizzes
+
+    def get_questions_for_quizz(self, quizz_id):
+        cursor = self.db.cursor()
+        query = 'SELECT * FROM Questions WHERE quiz_id = ?'
+        cursor.execute(query, (quizz_id,))
+        questions = cursor.fetchall()
+        cursor.close()
+        return questions
+
+    def get_answer_for_question(self, question_id):
+        cursor = self.db.cursor()
+        query = 'SELECT * FROM Answers WHERE question_id = ?'
+        cursor.execute(query, (question_id,))
+        answers = cursor.fetchall()
+        cursor.close()
+        return answers
