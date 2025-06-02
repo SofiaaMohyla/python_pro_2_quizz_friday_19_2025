@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<main>
+    <h1>Результат</h1>
+    <p>Правильних відповідей: {{ correct }} із {{ total }}</p>
+    <a href="{{ url_for('quizzes') }}" class="btn">Спробувати інший квіз</a>
+</main>
+{% endblock main %}

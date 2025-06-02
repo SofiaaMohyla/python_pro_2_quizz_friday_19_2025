@@ -2,7 +2,7 @@
 
 {% block main %}
 <main>
-    <div class="question-container">
+    <div >
         <div class="question-title">{{ question.content }}</div>
         <form action="{{ url_for('answer_func', quizz_id=quizz_id) }}" method="post">
             {% for option in options %}
